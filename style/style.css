@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap');
+
+:root{
+    --cor-topo: rgb(81,66,63);
+    --cor-verde: green;
+    --cor-preta: black;
+    --cor-branca: white;
+    --cor-conteudo: #664B3D;
+    --cor-texto: #D7C7AE;
+    --cor-fundo: #E4BFCB;
+    --font: 'Edu NSW ACT Foundation', cursive !important;
+    --cor-laranja: rgb(255, 131, 23);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: all 1s;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.topo{
+    background-color: var(--cor-topo);
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.topo img{
+    height: 15vh;
+}
+
+.topo button{
+    border: 1px solid var(--cor-branca);
+}
+
+.topo a{
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-family: var(--font);
+}
+
+.banner img,
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next{
+    height: calc(80vh - 122px);
+}
+
+#carouselExampleIndicators{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next{
+    background-color: rgba(221, 213, 213, 80%) !important;
+}
+
+.carousel-indicators #carouselExampleIndicators{
+    background-color: var(--cor-preta) !important;
+}
+
+.fa-brands.fa-whatsapp{
+    background-color: var(--cor-verde);
+}
+
+.whatsapp-button{
+    position: fixed;
+	bottom: 20px;
+	right: 20px;
+    z-index: 9999;
+}
+
+.fa-brands.fa-whatsapp{
+    background-color: transparent !important;
+}
+
+.whatsapp-button{
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-name: whats;
+    animation-delay: .2s;
+    animation-timing-function: ease-out;
+    box-shadow: inset 0 0 1em rgb(52, 46, 13), 0 0 1em var(--cor-verde);
+}
+
+@keyframes whats{
+    0% {
+        opacity: 0.8;
+        transform: scale(0.8);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.banner .pImagem{
+    background-image: url("../img/carrosel.png");
+}
+
+.banner .sImagem{
+    background-image: url("../img/carrosel2.png");
+}
+
+.banner .tImagem{
+    background-image: url("../img/carrosel3.png");
+}
+
+.banner .pImagem, .banner .sImagem, .banner .tImagem{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: calc(100vh - 125px);
+}
+
+.nossasDelic{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 10px;
+}
+
+.nossasDelic div img, .nossas-delicias{
+    border-radius: 20px;
+}
+
+.nossas-delicias div img:hover, .btn.btn-danger, .btn.btn-outline-danger{
+    box-shadow: inset 0 0 1em rgb(52, 46, 13), 0 0 1em var(--cor-fundo);
+}
+
+.nossas-delicias h2{
+    text-align: center;
+    padding: 20px;
+    color: var(--cor-texto) !important;
+    font-family: var(--font);
+}
+
+.owl-next span, .owl-prev span, .nossas-delicias h2{
+    color: var(--cor-branca);
+}
+
+.conteudo{
+    background-color: var(--cor-conteudo);
+}
+
+.nossasDelic, .rodape{
+    padding: 20px;
+}
+
+.rodape{
+    background-color: var(--cor-fundo);
+    font-family: var(--font);
+    text-align: center;
+}
+
+.instagram a{
+    color: var(--cor-laranja);
+}
+
+.nossasDelic div:hover{
+    transform: scale(1.1);
+}
+
+.conteudo .btn.btn-danger{
+    width: 100%;
+}
