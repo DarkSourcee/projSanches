@@ -2,7 +2,7 @@
 
 session_start();
 
-define('BASE_URL', 'http://localhost:8080/brownieSanches/');
+define('BASE_URL', 'http://localhost:8080/brownieSanches/api/');
 
 include "app/controller/indexController.php";
 
@@ -13,7 +13,7 @@ $index = new indexController();
 
 switch ($url) {
     //url para tela inicial
-    case "/brownieSanches/":
+    case "/brownieSanches/api/":
         $index->telaIndex();
     break;
 
