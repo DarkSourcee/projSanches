@@ -7,5 +7,18 @@
 @media (max-width: 550px){
     .nossasDelic{
         grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .banner .pImagem{
+        background-image: url("../img/carroselMobile.png");
+    }
+    
+    .banner .sImagem{
+        background-image: url("../img/carroselMobile2.png");
+    }
+    
+    .banner .tImagem{
+        background-image: url("../img/carroselMobile3.png");
     }
 }
