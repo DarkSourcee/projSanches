@@ -11,8 +11,9 @@
     }
 
     .banner .pImagem, .banner .sImagem, .banner .tImagem{
-        background-size: contain;
-        height: calc(50vh - 111px);
+        background-size: cover;
+        height: calc(100vh - 111px);
+        width: 100%;
     }
 
     .banner .pImagem{
