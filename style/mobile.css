@@ -2,13 +2,6 @@
     .nossasDelic{
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media (max-width: 550px){
-    .nossasDelic{
-        grid-template-columns: repeat(1, 1fr);
-        gap: 30px;
-    }
 
     .banner .pImagem, .banner .sImagem, .banner .tImagem{
         background-size: cover;
@@ -26,5 +19,12 @@
     
     .banner .tImagem{
         background-image: url("../img/carroselMobile3.png");
+    }
+}
+
+@media (max-width: 550px){
+    .nossasDelic{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
     }
 }
