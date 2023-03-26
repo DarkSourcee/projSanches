@@ -10,6 +10,11 @@
         gap: 30px;
     }
 
+    .banner .pImagem, .banner .sImagem, .banner .tImagem{
+        background-size: contain;
+        height: calc(50vh - 111px);
+    }
+
     .banner .pImagem{
         background-image: url("../img/carroselMobile.png");
     }
