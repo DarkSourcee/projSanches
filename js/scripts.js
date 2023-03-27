@@ -4,7 +4,7 @@ const telaInicio = document.getElementById("inicio")
 // navegar entre telas
 if (telaProdutos){
     telaProdutos.addEventListener("click", () => {
-        window.location.href = "../view/produtos.html"
+        window.location.href = "../produtos.html"
     });
 }
 
