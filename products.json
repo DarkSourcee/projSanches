@@ -1,0 +1,36 @@
+{
+    "Product": [
+        {
+            "id": 0,
+            "name": "brownie-chocolate-branco",
+            "patch": "./img/nossasDelicias.png",
+            "value": 4.50,
+            "amount": 1,
+            "description": "Nosso famoso mini brownie de brigadeiro com sorvete acompanhado de uma deliciosa calda de chocolate quente. Você escolhe o sabor do seu gelato: Creme, Ninho, Brownie Belga, Brownie e Doce de Leite. Mini brownie de brigadeiro" 
+        },
+        {
+            "id": 1,
+            "name": "brownie-chocolate-preto",
+            "patch": "./img/nossasDelicias2.png",
+            "value": 9,
+            "amount": 1,
+            "description": "Nosso famoso mini brownie de brigadeiro com sorvete acompanhado de uma deliciosa calda de chocolate quente. Você escolhe o sabor do seu gelato: Creme, Ninho, Brownie Belga, Brownie e Doce de Leite. Mini brownie de brigadeiro" 
+        },
+        {
+            "id": 2,
+            "name": "brownie-chocolate-preto2",
+            "patch": "./img/nossasDelicias3.png",
+            "value": 6.78,
+            "amount": 1,
+            "description": "Nosso famoso mini brownie de brigadeiro com sorvete acompanhado de uma deliciosa calda de chocolate quente. Você escolhe o sabor do seu gelato: Creme, Ninho, Brownie Belga, Brownie e Doce de Leite. Mini brownie de brigadeiro" 
+        },
+        {
+            "id": 3,
+            "name": "brownie-chocolate-preto",
+            "patch": "./img/nossasDelicias4.png",
+            "value": 7.80,
+            "amount": 1,
+            "description": "Nosso famoso mini brownie de brigadeiro com sorvete acompanhado de uma deliciosa calda de chocolate quente. Você escolhe o sabor do seu gelato: Creme, Ninho, Brownie Belga, Brownie e Doce de Leite. Mini brownie de brigadeiro" 
+        }
+    ]
+}

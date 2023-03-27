@@ -39,7 +39,7 @@ html{
     height: 15vh;
 }
 
-.topo button{
+.topo button, #carrinho, .finalizar-compra{
     border: 1px solid var(--cor-branca);
 }
 
@@ -137,7 +137,7 @@ html{
     border-radius: 20px;
 }
 
-.nossas-delicias div img:hover, .btn.btn-danger, .btn.btn-outline-danger{
+.nossas-delicias div img:hover, .btn.btn-danger, .btn.btn-outline-dange, .itens img:hover, .finalizar-compra, .valores, .carrinho{
     box-shadow: inset 0 0 1em rgb(52, 46, 13), 0 0 1em var(--cor-fundo);
 }
 
@@ -170,5 +170,69 @@ html{
 }
 
 .conteudo .btn.btn-danger{
+    width: 100%;
+}
+
+.itens{
+    display: flex;
+    padding: 10px;
+}
+
+.itens .grid{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 20px;
+}
+
+.itens .grid p{
+    color: var(--cor-branca);
+}
+
+.itens .grid .valores{
+    display: flex;
+    width: 70px;
+    background-color: transparent;
+    border: 1px solid var(--cor-branca);
+    border-radius: 10px;
+    justify-content: space-between;
+    height: 30%;
+    text-align: center;
+}
+
+.itens .grid .valores button{
+    background-color: transparent;
+    color: var(--cor-branca);
+    width: 20%;
+}
+
+.itens .grid .valores .aumenta{
+    border-radius: 10px 0px 0px 10px;
+    border-right: 1px solid var(--cor-branca);
+}
+
+.itens .grid .valores .diminui{
+    border-radius: 0px 10px 10px 0px;
+    border-left: 1px solid var(--cor-branca);
+}
+
+.itens .grid .valores .aumenta:hover, .itens .grid .valores .diminui:hover{
+    background-color: var(--cor-fundo);
+    color: var(--cor-preta);
+}
+
+#conteudo{
+    font-family: var(--font);
+}
+
+.itens img{
+    border-radius: 20px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.finalizar-compra{
     width: 100%;
 }

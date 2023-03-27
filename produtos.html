@@ -22,8 +22,8 @@
         </nav>
     </header>
 
-    <main class="conteudo">
-
+    <main class="conteudo" id="conteudo">
+        <!-- conteudo vai vir pelo js -->
     </main>
 
     <footer class="rodape">
@@ -39,6 +39,106 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/45751c5e31.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            carregaProdutos()
+
+            setTimeout(() => {
+                $(".aumenta").on("click", function(e){
+                    var item = $(this).data("item")
+                    var qtde = $("#qtde_" + item).html()
+                    var valor = $("#valor_" + item).html()
+                    var valorReal = parseFloat($(this).data("valor"))
+                    
+                    qtde = parseInt(qtde)
+                    valor = parseFloat(valor)
+                
+                    qtde = qtde + 1
+
+                    valor = valorReal * qtde
+                
+                    $("#qtde_" + item).html(qtde)
+                    $("#valor_" + item).html(valor)
+                })
+                
+                $(".diminui").on("click", function(e){
+                    var item = $(this).data("item")
+                    var qtde = $("#qtde_" + item).html()
+                    var valor = $("#valor_" + item).html()
+                    var valorReal = parseFloat($(this).data("valor"))
+                    
+                    qtde = parseInt(qtde)
+                    valor = parseFloat(valor)
+                
+                    if (qtde > 0){
+                        qtde = qtde - 1
+
+                        valor = valorReal * qtde
+                    
+                        $("#qtde_" + item).html(qtde)
+                        $("#valor_" + item).html(valor)
+                    }
+                })
+
+                var carrinho = []
+
+                $(".carrinho").on("click", function(e){
+                    var item = $(this).data("item")
+                    var cont = $(this).data("cont")
+                    var qtde = parseInt($("#qtde_" + cont).html())
+                    var valor = parseFloat($("#valor_" + cont).html())
+
+                    // Verifica se o item já existe no carrinho
+                    var index = carrinho.findIndex(x => x.id === item.id);
+
+                    //Se existir armazena na variavel e apaga o item
+                    if (index !== -1) {
+                        qtde += carrinho[index].qtde;
+                        valor += carrinho[index].valor;
+                        carrinho.splice(index, 1)
+                    }
+
+                    //Manda gravar 
+                    carrinho.push({
+                        id: item.id,
+                        nome: item.name,
+                        qtde: qtde,
+                        valor: valor
+                    });
+
+                    console.log(carrinho)
+                })
+
+                let message = ""
+                $(".finalizar-compra").on("click", function(e){
+
+                    console.log(carrinho)
+                    var phoneNumber = "5518981387649" // substitua pelo número de telefone desejado
+                    message = "👩‍🍳 *Olá! Seja bem-vindo sou Brownie Sanches, sua assistente virtual*\n" 
+                    message += "👩‍🍳 Vamos revisar o seu pedido\n\n\n"
+                    message += "👩‍🍳 Você escolheu " + carrinho.length + " produtos, sendo eles\n\n"
+                    
+                    var total = 0
+
+                    carrinho.map((item, index)=>{
+                        message += "Item: " + (index + 1) + "\n"
+                        message += "Produto: " + item.nome + "\n"
+                        message += "Quantidade: " + item.qtde + "\n"
+                        message += "Valor: " + item.valor + "\n"
+                        
+                        message += "--------------------------------------\n"
+                        total += parseFloat(item.valor)
+                    })
+                    
+                    message += "💵 *O valor total deu de R$ " + parseFloat(total) + "*"
+                    var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+                    window.open(url);                      
+                })
+            }, 1000)
+        })
+    </script>
 </body>
 </html>
