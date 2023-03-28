@@ -1,6 +1,8 @@
 const telaProdutos = document.getElementById("confira-delicias")
 const telaInicio = document.getElementById("inicio")
 
+var carrinho = []
+
 // navegar entre telas
 if (telaProdutos){
     telaProdutos.addEventListener("click", () => {
@@ -53,4 +55,45 @@ async function carregaProdutos() {
         $("#conteudo").html(html)
 
     })
+}
+
+function excluirItem(x1){
+    var item = $(x1).data("item")
+    var cont = $(x1).data("cont")
+    var qtde = parseInt($("#qtde_" + cont).html())
+    var valor = parseFloat($("#valor_" + cont).html())
+
+    var qtdeCarrinho = document.getElementById("qtde-carrinho")
+
+    console.log(item)
+    console.log(x1)
+    // Verifica se o item já existe no carrinho
+    var index = carrinho.findIndex(x => x.id === item.id);
+
+    //Se existir apaga o item
+    if (index !== -1) {
+        carrinho.splice(index, 1)
+    }
+
+    let qtdeAdicionada = carrinho.length
+    qtdeCarrinho.innerHTML = qtdeAdicionada
+
+    //recarrega a página do carrinho de compras
+    var html = ""
+    carrinho.map((item)=>{
+        // Adiciona as informações do item na variável html
+        html += "<div class='conteudo-carrinho-compras'>"
+        html += "<img src='" + item.imagem + "' alt='" + item.nome + "' />"
+        html += "<div class='info'>"
+        html += "<p><strong>Nome:</strong> " + item.nome + "</p>"
+        html += "<p><strong>Quantidade:</strong> " + item.qtde + "</p>"
+        html += "<p><strong>Valor</strong>: R$ " + item.valor + "</p>"
+        html += "</div>"
+        html += "</div>"
+        html += "<button type='button' class='btn btn-outline-danger excluir-item' data-item='"+ JSON.stringify(item) +"' onclick='excluirItem($(this))'><i class='fa-regular fa-trash-can fa-bounce'></i> Excluir item</button><br>"
+        html += "<hr>"
+    })
+
+    // Define o conteúdo HTML da div "carrinho-info" com as informações dos itens do carrinho
+    document.getElementById("conteudo-carrinho").innerHTML = html
 }

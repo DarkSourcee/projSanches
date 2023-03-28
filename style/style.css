@@ -74,7 +74,7 @@ html{
     background-color: var(--cor-verde);
 }
 
-.whatsapp-button{
+.whatsapp-button, .carrinho-compras{
     position: fixed;
 	bottom: 20px;
 	right: 20px;
@@ -137,7 +137,8 @@ html{
     border-radius: 20px;
 }
 
-.nossas-delicias div img:hover, .btn.btn-danger, .btn.btn-outline-dange, .itens img:hover, .finalizar-compra, .valores, .carrinho{
+.nossas-delicias div img:hover, .btn.btn-danger, .btn.btn-outline-dange, .itens img:hover, .finalizar-compra, .valores, .carrinho, 
+.carrinho-compras, #inicio{
     box-shadow: inset 0 0 1em rgb(52, 46, 13), 0 0 1em var(--cor-fundo);
 }
 
@@ -234,5 +235,69 @@ html{
 }
 
 .finalizar-compra{
+    width: 100%;
+}
+
+.carrinho-compras{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    z-index: 99999;
+    color: var(--cor-branca);
+}
+
+#menu-lateral{
+    height: 100vh;
+    width: 0px;
+    right: 0px;
+    position: fixed;
+    z-index: 99999;
+    background-color: #D7C7AE;
+    overflow-x: auto;
+}
+
+#menu-lateral .fechar-menu{
+    border: none;
+    background: transparent;
+    color: var(--cor-branca);
+}
+
+#menu-lateral .fechar-menu button:hover{
+    transform: scale(1.2);
+}
+
+.cart{
+    background-color: var(--cor-conteudo);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart p{
+    color: var(--cor-branca);
+}
+
+.conteudo-carrinho{
+    padding: 5px;
+}
+
+.conteudo-carrinho-compras{
+    display: flex;
+    padding: 5px;
+}
+
+.conteudo-carrinho-compras img{
+    width: 40%;
+    height: 130px;
+    border-radius: 20px;
+}
+
+.info{
+    padding: 5px;
+}
+
+.excluir-item{
+    z-index: 99999;
     width: 100%;
 }
